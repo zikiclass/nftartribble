@@ -1,0 +1,160 @@
+.container{
+    padding: 1.2rem;
+    position: relative;
+    background-color: var(--background);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logo_main{
+    display: flex;
+}
+.logo_wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 1.4rem;
+}
+.logo_wrap span{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    position: relative;
+}
+.logo_wrap span:after{
+    width: 40%;
+    height: 2px;
+    background-color: var(--sharp-blue);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+}
+.search{
+    display: flex;
+    border: 1px solid var(--cool-ash);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.search input[type="text"]{
+    background-color: transparent;
+    font-size: 0.9rem;
+}
+.search input[type="text"]:focus{
+    outline: none;
+}
+.search input[type="text"]::placeholder{
+    color: var(--bright-ash);
+}
+.search span{
+    padding: 2px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--bright-ash);
+}
+.menu{
+    gap: 1rem;
+    display: flex;
+    font-weight: 500;
+    color: var(--sharp-ash);
+    align-items: center;
+}
+.menu_link, .menu_link_{
+    transition: 0.3s ease all;
+    padding: 6px;
+}
+.menu_link:hover, .menu_link_ span:first-child:hover{
+    color: #fff;
+}
+.new{
+    background-color: var(--cool-ash);
+    padding: 0px 6px;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+.quick_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.video{
+    width: 100px!important;
+    border-radius: 10px;
+}
+.conect, .connect{
+    background-color: #fff;
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+   text-align: center;
+}
+.conect{
+    font-size: 1.2rem;
+}
+.shopIcon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.mobile_menu{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile_container{
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    padding: 1.3rem;
+    overflow: hidden;
+    left: 0;
+    
+}
+.menu_{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.menu__{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--sharp-ash);
+}
+.menu_ .new{
+    color: #fff;
+}
+
+@media screen and (max-width: 760px){
+    .logo_wrap span, .search, .menu, .connect{
+        display: none;
+    }
+    .mobile_menu{
+        display: block;
+    }
+    .logo{
+        width: 35px;
+    }
+}
