@@ -51,7 +51,7 @@ const Container = styled.div`
     scale: 1.04;
   }
   @media screen and (max-width: 760px) {
-    width: 170px;
+    width: 185px;
   }
 `;
 const Button = styled.button`

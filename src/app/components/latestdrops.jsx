@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./css/latestdrops.module.css";
+import styles from "./css/style.module.css";
 import Link from "next/link";
 import Drop from "./drop";
 import EastIcon from "@mui/icons-material/East";
