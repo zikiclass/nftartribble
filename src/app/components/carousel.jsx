@@ -4,6 +4,7 @@ import styles from "./css/carousel.module.css";
 import bg1 from "../../../public/2IximP-9AT7sSrfD8R8MYhJZn-O108_lMqP4iOS0hsM.gif";
 import Image from "next/image";
 import { name } from "../../../env";
+import img5 from "../../../public/video-to-gif-converter.gif";
 import img1 from "../../../public/bafkreiadi6oo72uouhjmwho37lbgoa4ogmq5ejwqe3cu4owm25v2ivlija.webp";
 import img2 from "../../../public/e0t4sE9wcq7uKstQ3JdR4fU-CJWS4qR5xkdLWiY4LSY.jpg";
 import img3 from "../../../public/X5S8jGriX2OE5dbCEc3J-kSwR3TUaMk1DOsoCsSNZqs.jpg";
@@ -158,15 +159,7 @@ const Carousel = () => {
       ) : active === 4 ? (
         <div className={`${styles.slide4} ${styles.active}`}>
           <div className={styles.img}>
-            <video
-              src="/logovideo.mp4"
-              loop
-              autoPlay
-              muted
-              className={styles.bgImg}
-            >
-              Your browser does not support the video tag.
-            </video>
+            <Image src={img5} alt="bg5" className={styles.bgImg} />
           </div>
           <div className={styles.slide_content}>
             <span>

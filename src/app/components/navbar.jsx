@@ -51,10 +51,10 @@ const Navbar = () => {
           <div className={styles.quick_menu}>
             <video
               src="/vid1.mp4"
-              controls
               loop
               autoPlay
               muted
+              playsInline
               className={styles.video}
             >
               Your browser does not support the video tag.
