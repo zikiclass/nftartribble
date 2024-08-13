@@ -27,6 +27,7 @@ const Carousel = () => {
     const intervalId = setInterval(updateActiveSlide, 7000);
     return () => clearInterval(intervalId);
   }, []);
+
   return (
     <div className={styles.container}>
       {active === 1 ? (

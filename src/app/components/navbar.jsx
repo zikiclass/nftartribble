@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import styles from "./css/menu.module.css";
@@ -8,6 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import MobileMenu from "./mobilemenu";
+
 const Navbar = () => {
   const [mobile, setMobile] = useState(false);
   const showMobile = () => {
@@ -35,7 +36,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className={styles.menu}>
-            <Link href="/" className={styles.menu_link}>
+            <Link href="/create" className={styles.menu_link}>
               Create
             </Link>
             <Link href="/" className={styles.menu_link}>

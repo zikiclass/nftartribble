@@ -90,8 +90,24 @@
     }
     .content1 form input[type="email"]{
         width: 70%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: 0px;
+        border-color: #28373e;
+        font-size: 13px;
+    }
+    .content1 form input[type="submit"]{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background-color: #2A414C;
+        color: #fff;
+        font-size: 13px;
+        
     }
     .content1{
         text-align: center;
+    }
+    .content1 form{
+        gap: 0px;
     }
 }
