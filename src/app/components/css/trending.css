@@ -1,9 +1,22 @@
-.content_trending{
-    padding: 1.2rem!important;
-    margin: 2rem;
-    margin-left: 2rem!important;
-    border: 1px solid #ccc;
+/* styles/TradingViewWidget.module.css */
+.tradingview-widget-container {
     position: relative;
-    display: flex;
-}
-
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tradingview-widget-container__widget {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tradingview-widget-copyright {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .blue-text {
+    color: #007bff;
+  }
+  

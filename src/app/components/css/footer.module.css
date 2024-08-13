@@ -1,0 +1,97 @@
+.container{
+    padding: 1.2rem;
+    margin: 1rem;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 2rem;
+    color: #AAB3B7;
+}
+
+.bottom:before{
+    width: 100%;
+    height: 1px;
+    background-color: #444647;
+    content: "";
+    display: block;
+    margin: 1.3rem 0px;
+}
+.content1 ul li{
+    color: #AAB3B7;
+    list-style: none;
+    font-size: 14px;
+}
+.content1 h2{
+    font-size: 1.2rem;
+}
+
+.content1 form{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.content1 form input[type="email"]{
+    background-color: transparent;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #7F8D94;
+}
+
+.content1 form input[type="email"]:focus{
+    outline: none;
+   
+}
+.content1 form input[type="submit"]{
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 0px 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logo_main{
+    display: flex;
+}
+.logo_wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 1.4rem;
+}
+.logo_wrap span{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    position: relative;
+}
+.logo_wrap span:after{
+    width: 40%;
+    height: 2px;
+    background-color: var(--sharp-blue);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+}
+@media screen and (max-width: 760px){
+    .content{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .content1 form input[type="email"]{
+        width: 70%;
+    }
+    .content1{
+        text-align: center;
+    }
+}

@@ -1,0 +1,86 @@
+.container{
+    padding: 4rem;
+    margin: 2rem 1rem;
+    background-color: #2A414C;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.text{
+    flex: 1;
+}
+.text h2{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.text span{
+    color: #AAB3B7;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.inputform{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inputform form{
+    display: flex;
+    gap: 1rem;
+}
+.inputform form input[type="email"]{
+    background-color: #324853;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+}
+
+.inputform form input[type="email"]:focus{
+    outline: none;
+    border: 1px solid #7F8D94;
+}
+.inputform form input[type="submit"]{
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 0px 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.inputform span{
+    color: #AAB3B7;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 760px){
+    .container{
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+    }
+    .text{
+        text-align: center;
+    }
+    .text h2{
+        font-weight: 500;
+        font-size: 2rem;
+    }
+    .text span{
+        font-weight: normal;
+        font-size: 1rem;
+    }
+    .inputform{
+       width: 100%;
+    }
+    .inputform form{
+        gap: 10px;
+        width: 100%;
+    }
+    .inputform form input[type="email"]{
+        width: 100%;
+        font-size: 13px;
+    }
+    .inputform form input[type="submit"]{
+        padding: 10px;
+    }
+   
+}

@@ -21,7 +21,7 @@ const TradingView = () => {
         isTransparent: false,
         showSymbolLogo: false,
         showFloatingTooltip: false,
-        width: "400",
+        width: "100%",
         height: "550",
         plotLineColorGrowing: "rgba(41, 98, 255, 1)",
         plotLineColorFalling: "rgba(41, 98, 255, 1)",
@@ -48,7 +48,7 @@ const TradingView = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container">
+    <div className="tradingview-widget-container" style={{ flex: 1 }}>
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright"></div>
     </div>
