@@ -72,7 +72,7 @@ const Button = styled.button`
 `;
 
 const Div = styled.div`
-  background-image: url(${(props) => props.bg.src});
+  background-image: url(${(props) => props.bg});
   background-size: cover;
   background-position: center;
   width: 100%;

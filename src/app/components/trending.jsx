@@ -1,50 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import styles from "./css/style.module.css";
+import React, { useState, useEffect } from "react";
 
-const Trending = () => {
-  const [nfts, setNFTs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const OPENSEA_API_BASE = "https://api.opensea.io/api/v2";
-  const API_KEY = "6f235859a6d5441e9c9a114798a05003";
+const Trending = ({ nftData }) => {
+  const [nfts, setNfts] = useState([]);
 
   useEffect(() => {
-    const getCollectionNFTs = async () => {
-      try {
-        const response = await axios.get(
-          `${OPENSEA_API_BASE}/collection/kanpai-pandas`,
-          {
-            headers: {
-              Authorization: `Bearer ${API_KEY}`,
-            },
-          }
-        );
-        setNFTs(response.data); // Adjust according to API response structure
-        setLoading(false);
-      } catch (error) {
-        console.log("Error fetching collection", error);
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    getCollectionNFTs();
-  }, [API_KEY]);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+    if (nftData && nftData.result) {
+      setNfts(nftData.result);
+    } else {
+      console.error("Invalid NFT data:", nftData);
+    }
+  }, [nftData]);
 
   return (
-    <div className={styles.container}>
-      <h3>Trending</h3>
-      <ul>
-        {nfts.map((nft) => (
-          <li key={nft.id}>{nft.name}</li> // Adjust according to API response structure
-        ))}
-      </ul>
+    <div style={{ flex: 2 }}>
+      {nfts.length > 0 ? (
+        nfts.map((nft, index) => {
+          try {
+            const nftMetaData = JSON.parse(nft.metadata);
+            return <div key={index}>{nftMetaData.name}</div>; // Example display
+          } catch (error) {
+            console.error("Error parsing NFT metadata:", error);
+            return <div key={index}>Error parsing metadata</div>;
+          }
+        })
+      ) : (
+        <div>No NFTs available</div>
+      )}
     </div>
   );
 };

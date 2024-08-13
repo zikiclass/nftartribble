@@ -78,7 +78,7 @@ const LatestDrops = () => {
               name={drop.name}
               minting={drop.minting}
               price={drop.price}
-              bg={drop.bg}
+              bg={drop.bg.src}
               status={drop.status}
             />
           </div>

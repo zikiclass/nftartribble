@@ -1,0 +1,9 @@
+.content_trending{
+    padding: 1.2rem!important;
+    margin: 2rem;
+    margin-left: 2rem!important;
+    border: 1px solid #ccc;
+    position: relative;
+    display: flex;
+}
+
