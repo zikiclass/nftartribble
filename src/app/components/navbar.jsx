@@ -39,13 +39,13 @@ const Navbar = () => {
             <Link href="/create" className={styles.menu_link}>
               Create
             </Link>
-            <Link href="/" className={styles.menu_link}>
+            <Link href="/explore" className={styles.menu_link}>
               Explore
             </Link>
-            <Link href="/" className={styles.menu_link}>
-              Sell
+            <Link href="/blog" className={styles.menu_link}>
+              Blog
             </Link>
-            <Link href="/" className={styles.menu_link_}>
+            <Link href="/drops" className={styles.menu_link_}>
               <span>Drops</span> <span className={styles.new}>new</span>
             </Link>
           </div>

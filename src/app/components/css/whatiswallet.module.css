@@ -1,0 +1,98 @@
+.container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(26, 28, 31, 0.7);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+.connect{
+    padding: 1.7rem;
+    background-color: #1D2124;
+    border-radius: 15px;
+    border: 1px solid #2E3133;
+    width: 400px;
+}
+.connect h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+.connect p{
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+.connect p span{
+    color: #fff;
+    font-weight: 500;
+}
+
+.popular {
+    color: #AAB3B7;
+    font-weight: 500;
+    margin-top: 1.4rem;
+}
+
+.cryptos{
+    display: flex;
+    flex-direction: column;
+}
+.crypto{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0.4rem 0px;
+    border-radius: 10px;
+    border: 1px solid #2E3133;
+    padding: 0.7rem 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+}
+.crypto:hover{
+    background-color: #2E3133;
+}
+.crypto span{
+    font-size: 14px;
+    font-weight: 500;
+}
+.img{
+    width: 30px;
+}
+.close{
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    padding: 5px;
+    border: 1px solid #646a6c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+}
+.close:hover{
+    border-color: #AAB3B7;
+}
+
+.button{
+    text-align: center;
+    margin: 1rem 0px;
+    border-radius: 10px;
+    border: 1px solid #2E3133;
+    padding: 0.5rem 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    font-weight: 500;
+    font-size: 16px;
+}
+.connect li{
+    list-style:disc;
+    margin-left: 1rem;
+   
+}
+.connect ul{
+    margin-bottom: 2rem;
+}

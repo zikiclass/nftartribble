@@ -18,17 +18,17 @@ const MobileMenu = ({ closeMenu }) => {
           <Link href="/create" className={styles.menu_link_}>
             Create
           </Link>
-          <Link href="/" className={styles.menu_link_}>
+          <Link href="/explore" className={styles.menu_link_}>
             Explore
           </Link>
-          <Link href="/" className={styles.menu_link_}>
-            Sell
+          <Link href="/blog" className={styles.menu_link_}>
+            Blog
           </Link>
-          <Link href="/" className={styles.menu_link_}>
+          <Link href="/drops" className={styles.menu_link_}>
             <span>Drops</span> <span className={styles.new}>new</span>
           </Link>
         </div>
-        <Link href="/" className={styles.conect}>
+        <Link href="/connect" className={styles.conect}>
           Connect Wallet
         </Link>
       </div>

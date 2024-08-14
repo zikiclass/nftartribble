@@ -24,10 +24,18 @@ const Footer = () => {
         <div className={styles.content1}>
           <h2>Marketplace</h2>
           <ul>
-            <li>Explore</li>
-            <li>Blog</li>
-            <li>Jobs</li>
-            <li>Help Center</li>
+            <li>
+              <Link href="/create">Create</Link>
+            </li>
+            <li>
+              <Link href="/explore">Explore</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/connect">Connect Wallet</Link>
+            </li>
           </ul>
         </div>
       </div>
