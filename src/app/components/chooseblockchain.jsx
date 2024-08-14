@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from "react";
 import styles from "./css/chooseblockchain.module.css";
 import eth from "../../../public/ethereum.svg";
 import celo from "../../../public/celo.svg";
@@ -11,7 +13,7 @@ import astar from "../../../public/astar.svg";
 import kroma from "../../../public/kroma.svg";
 import zkSync from "../../../public/zkSync.svg";
 import immutableX from "../../../public/immutableX.svg";
-import Link from "next/link";
+import ConnectWallet from "./connectwallet";
 import Image from "next/image";
 const ChooseBlockchain = () => {
   const chooseOptions = [
@@ -28,6 +30,18 @@ const ChooseBlockchain = () => {
     { crypto: "zkSync", icon: zkSync },
     { crypto: "Immutable X", icon: immutableX },
   ];
+
+  const [showConnectWallet, setShowConnectWallet] = useState(false);
+  const [cryptoTitle, setCryptoTitle] = useState("");
+  const handleClick = (crypto) => {
+    setCryptoTitle(crypto);
+    setShowConnectWallet(true);
+  };
+
+  const closeConnect = () => {
+    setCryptoTitle(null);
+    setShowConnectWallet(false);
+  };
   return (
     <div className={styles.container}>
       <h2>Choose Blockchain</h2>
@@ -38,16 +52,24 @@ const ChooseBlockchain = () => {
 
       <div className={styles.lists}>
         {chooseOptions.map((option, index) => (
-          <Link href="connectwallet" className={styles.list} key={index}>
+          <div
+            className={styles.list}
+            key={index}
+            onClick={() => handleClick(option.crypto)}
+          >
             <Image
               src={option.icon}
               alt={option.crypto}
               className={styles.img}
             />
             <span>{option.crypto}</span>
-          </Link>
+          </div>
         ))}
       </div>
+
+      {showConnectWallet && (
+        <ConnectWallet crypto={cryptoTitle} closeConnect={closeConnect} />
+      )}
     </div>
   );
 };

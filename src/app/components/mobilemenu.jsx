@@ -15,7 +15,7 @@ const MobileMenu = ({ closeMenu }) => {
       />
       <div className={styles.menu_}>
         <div className={styles.menu__}>
-          <Link href="/" className={styles.menu_link_}>
+          <Link href="/create" className={styles.menu_link_}>
             Create
           </Link>
           <Link href="/" className={styles.menu_link_}>
