@@ -60,7 +60,7 @@ const Navbar = () => {
             >
               Your browser does not support the video tag.
             </video>
-            <Link href="/" className={styles.connect}>
+            <Link href="/connect" className={styles.connect}>
               Connect Wallet
             </Link>
             <svg
