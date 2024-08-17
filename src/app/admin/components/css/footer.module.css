@@ -21,3 +21,8 @@
 .container span span{
     color: #3298D9;
 }
+@media screen and (max-width: 760px){
+    .container span{
+       font-size: 13px;
+    }
+}

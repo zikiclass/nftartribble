@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    font-family: calibri;
+    font-family: 'Calibri', sans-serif;
 }
 .container h3{
     color: #858789;
