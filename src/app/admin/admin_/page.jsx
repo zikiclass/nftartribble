@@ -7,13 +7,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { format, parseISO } from "date-fns";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Swal from "sweetalert2";
 const Admin = () => {
   const [lists, setList] = useState([]);
+  const getAdmins = async () => {
+    const response = await axios.get(`/api/register`);
+    if (response.data) setList(response.data);
+  };
   useEffect(() => {
-    const getAdmins = async () => {
-      const response = await axios.get(`/api/register`);
-      if (response.data) setList(response.data);
-    };
     getAdmins();
   }, []);
   useEffect(() => {
@@ -22,6 +23,40 @@ const Admin = () => {
   const formatDate = (dateString) => {
     const date = parseISO(dateString);
     return format(date, "EEEE dd, MMMM yyyy hh:mm:ss a");
+  };
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const deleteAdmin = async () => {
+          const response = await axios.delete("/api/register", {
+            params: { id },
+          });
+          if (response.status === 200) {
+            getAdmins();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Admin record has been deleted.",
+              icon: "success",
+            });
+          } else {
+            Swal.fire({
+              title: "Error!",
+              text: "Unable to delete record",
+              icon: "error",
+            });
+          }
+        };
+        deleteAdmin();
+      }
+    });
   };
   return (
     <div className={styles.container}>
@@ -48,10 +83,13 @@ const Admin = () => {
                   <td>{list.email}</td>
                   <td>{formatDate(list.date)}</td>
                   <td>
-                    <Link href="/" className={styles.btnDelete}>
+                    <button
+                      onClick={() => handleDelete(list.id)}
+                      className={styles.btnDelete}
+                    >
                       <span>Delete</span>{" "}
                       <DeleteIcon style={{ fontSize: "13px" }} />
-                    </Link>
+                    </button>
                   </td>
                 </tr>
               ))}

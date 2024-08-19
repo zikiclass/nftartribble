@@ -71,3 +71,19 @@ export async function GET(request) {
     return NextResponse.json(body.email, { status: 500 });
   }
 }
+
+export async function DELETE(req) {
+  try {
+    const adminId = req.nextUrl.searchParams.get("id");
+    const id = parseInt(adminId);
+    const deleteAdmin = await prisma.administrators.delete({
+      where: {
+        id,
+      },
+    });
+    if (deleteAdmin) return NextResponse.json("success", { status: 200 });
+    return NextResponse.json("error", { status: 404 });
+  } catch (error) {
+    return NextResponse.json(error, { status: 500 });
+  }
+}
