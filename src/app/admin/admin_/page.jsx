@@ -10,15 +10,18 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 const Admin = () => {
   const [lists, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const getAdmins = async () => {
     const response = await axios.get(`/api/register`);
     if (response.data) setList(response.data);
   };
   useEffect(() => {
     getAdmins();
+    setLoading(false);
   }, []);
   useEffect(() => {
     console.log(lists);
+    setLoading(false);
   }, [lists]);
   const formatDate = (dateString) => {
     const date = parseISO(dateString);
@@ -58,6 +61,7 @@ const Admin = () => {
       }
     });
   };
+
   return (
     <div className={styles.container}>
       <SideBar />
@@ -67,34 +71,36 @@ const Admin = () => {
           <Link href="/admin/addnew" className={styles.btnAdd}>
             Add New
           </Link>
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {lists.map((list, index) => (
-                <tr key={index}>
-                  <td>{list.id}</td>
-                  <td>{list.email}</td>
-                  <td>{formatDate(list.date)}</td>
-                  <td>
-                    <button
-                      onClick={() => handleDelete(list.id)}
-                      className={styles.btnDelete}
-                    >
-                      <span>Delete</span>{" "}
-                      <DeleteIcon style={{ fontSize: "13px" }} />
-                    </button>
-                  </td>
+          {!loading && (
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th className={styles.date}>Date</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {lists.map((list, index) => (
+                  <tr key={index}>
+                    <td>{list.id}</td>
+                    <td>{list.email}</td>
+                    <td className={styles.date}>{formatDate(list.date)}</td>
+                    <td>
+                      <button
+                        onClick={() => handleDelete(list.id)}
+                        className={styles.btnDelete}
+                      >
+                        <span>Delete</span>{" "}
+                        <DeleteIcon style={{ fontSize: "13px" }} />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </Content>
     </div>

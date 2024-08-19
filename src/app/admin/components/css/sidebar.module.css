@@ -1,5 +1,5 @@
 .container{
-    width: 250px;
+    width: 245px;
     height: 100vh;
     left: 0;
     position: fixed;
@@ -17,6 +17,7 @@
     align-items: left;
     flex-direction: column;
     margin: 1rem;
+ 
 }
 .logoDiv span{
     font-size: 15px;
@@ -58,6 +59,7 @@
     }
     .logoDiv{
         margin: 2rem 0px;
+        align-items: center;
     }
     .logoDiv span{
         display: none;
