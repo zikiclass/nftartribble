@@ -67,7 +67,7 @@ const Dashboard = () => {
             </div>
             <div className={styles.box}>
               <div className={styles.box_head}>
-                <h4>Connected Users</h4>
+                <h4>Drops</h4>
                 <span>All</span>
               </div>
 
@@ -84,7 +84,7 @@ const Dashboard = () => {
             </div>
             <div className={styles.box}>
               <div className={styles.box_head}>
-                <h4>Connected Users</h4>
+                <h4>Blogs</h4>
                 <span>All</span>
               </div>
 
@@ -101,7 +101,7 @@ const Dashboard = () => {
             </div>
             <div className={styles.box}>
               <div className={styles.box_head}>
-                <h4>Connected Users</h4>
+                <h4>Admin</h4>
                 <span>All</span>
               </div>
 

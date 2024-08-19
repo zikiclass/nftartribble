@@ -81,6 +81,88 @@
     width: 100%;
     justify-content: space-between;
 }
+.btnBack, .btnAdd{
+    background-color: var(--background);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btnAdd{
+    background-color: #1FB799;
+}
+
+.content{
+    margin: 2rem 0px;
+    width: 100%;
+    
+}
+.form{
+    margin: 2rem 0px;
+    width: 100%;
+   
+}
+.form label{
+    color: #858789;
+    display: block;
+}
+.form input[type="email"], .form input[type="password"]{
+    padding: 10px;
+    border: 1px solid #b7b8b9;
+    border-radius: 4px;
+    width: 30%;
+}
+.form input[type="email"]:focus, .form input[type="password"]:focus{
+    outline: none;
+}
+.form .input{
+    margin-top: 1rem;
+}
+.btnSubmit{
+    margin: 2rem 0px;
+    background-color: #346EE0;
+    color: #fff;
+    padding: 5px 13px;
+    border-radius: 5px;
+}
+.form p{
+    color: red;
+    font-size: 13px;
+}
+.content table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.content table thead th{
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 12px 15px;
+    text-align: left;
+}
+.content table tbody tr{
+    border-bottom: 1px solid #dee2e6;
+}
+.content td{
+    padding: 12px 15px;
+}
+.content tbody tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+.content table tbody tr:hover{
+    background-color: #e9ecef;
+}
+.content table th, .content table td{
+    border: 1px solid #dee2e6;
+}
+.btnDelete{
+    background-color: #d11a2a;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    
+}
 
 @media screen and (max-width: 760px){
     .analysis{
@@ -88,5 +170,15 @@
     }
     .cards{
         flex-direction: column;
+    }
+    .form input[type="email"], .form input[type="password"]{
+        
+        width: 100%;
+    }
+    .content table{
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }

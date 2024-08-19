@@ -1,13 +1,38 @@
+"use client";
 import React from "react";
-import styles from "./login.module.css";
+import styles from "./signin.module.css";
 import logo from "../../../../public/logo.png";
 import Image from "next/image";
 import { name } from "../../../../env";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 const Login = () => {
+  const handleSignIn = async (event) => {
+    event.preventDefault();
+    const { email, password } = event.target.elements;
+
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        email: email.value,
+        password: password.value,
+      });
+
+      if (result.error) {
+        toast.error("Invalid login details.");
+      } else {
+        router.push("/admin/dashboard");
+      }
+    } catch (error) {
+      console.error("Sign in error:", error);
+      toast.error("Sign in failed. Please try again.");
+    }
+  };
   return (
     <>
       <div className={styles.container}>
-        <form action="" className={styles.content}>
+        <form action="" className={styles.content} onSubmit={handleSignIn}>
           <Image src={logo} alt={name} className={styles.logo} />
           <div className={styles.input}>
             <label>Email address</label>

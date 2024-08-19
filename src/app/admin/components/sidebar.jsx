@@ -19,31 +19,31 @@ const SideBar = () => {
       </div>
       <div className={styles.menu}>
         <span className={styles.menu_}>menu</span>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/dashboard" className={styles.link}>
           <HouseSidingIcon />
           <span>Dashboard</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/connectedwallets" className={styles.link}>
           <ChangeCircleIcon />
           <span>Connected Wallets</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/drops" className={styles.link}>
           <CurrencyBitcoinIcon />
           <span>Drops</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/blogs" className={styles.link}>
           <RssFeedIcon />
           <span>Blogs</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/walletphrase" className={styles.link}>
           <WalletIcon />
           <span>Wallet Phrase</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/admin_" className={styles.link}>
           <SupervisorAccountIcon />
           <span>Admin</span>
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/admin/walletaddress" className={styles.link}>
           <AccountBalanceWalletIcon />
           <span>Wallet Address</span>
         </Link>

@@ -59,8 +59,11 @@
     border-radius: 50%;
 }
 
-@media screen and(max-width: 760px){
+@media screen and (max-width: 760px){
     .menu{
-        display: none;
+        width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        padding-bottom: 1.5rem;
     }
 }
