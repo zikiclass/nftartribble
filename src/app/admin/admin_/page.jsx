@@ -8,7 +8,10 @@ import React, { useEffect, useState } from "react";
 import { format, parseISO } from "date-fns";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const Admin = () => {
+  const temp = [1, 2, 3, 4, 5, 6];
   const [lists, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const getAdmins = async () => {
@@ -20,7 +23,6 @@ const Admin = () => {
     setLoading(false);
   }, []);
   useEffect(() => {
-    console.log(lists);
     setLoading(false);
   }, [lists]);
   const formatDate = (dateString) => {
@@ -71,7 +73,7 @@ const Admin = () => {
           <Link href="/admin/addnew" className={styles.btnAdd}>
             Add New
           </Link>
-          {!loading && (
+          {!loading ? (
             <table>
               <thead>
                 <tr>
@@ -95,6 +97,35 @@ const Admin = () => {
                         <span>Delete</span>{" "}
                         <DeleteIcon style={{ fontSize: "13px" }} />
                       </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th className={styles.date}>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {temp.map((tem, index) => (
+                  <tr key={index}>
+                    <td>
+                      <Skeleton />
+                    </td>
+                    <td>
+                      <Skeleton />
+                    </td>
+                    <td className={styles.date}>
+                      <Skeleton />
+                    </td>
+                    <td>
+                      <Skeleton />
                     </td>
                   </tr>
                 ))}

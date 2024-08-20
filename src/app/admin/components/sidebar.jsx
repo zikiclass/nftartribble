@@ -29,7 +29,7 @@ const SideBar = () => {
         </Link>
         <Link href="/admin/drops" className={styles.link}>
           <CurrencyBitcoinIcon />
-          <span>Drops</span>
+          <span>NFTs</span>
         </Link>
         <Link href="/admin/blogs" className={styles.link}>
           <RssFeedIcon />

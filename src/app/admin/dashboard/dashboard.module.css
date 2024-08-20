@@ -106,13 +106,14 @@
     color: #858789;
     display: block;
 }
-.form input[type="email"], .form input[type="password"]{
+.input_{
     padding: 10px;
     border: 1px solid #b7b8b9;
     border-radius: 4px;
     width: 30%;
+    background-color: #fff;
 }
-.form input[type="email"]:focus, .form input[type="password"]:focus{
+.input_:focus{
     outline: none;
 }
 .form .input{
@@ -171,7 +172,7 @@
     .cards{
         flex-direction: column;
     }
-    .form input[type="email"], .form input[type="password"]{
+    .input_{
         
         width: 100%;
     }

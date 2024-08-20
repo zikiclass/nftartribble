@@ -17,3 +17,12 @@ export const adminSchema = z
       });
     }
   });
+export const nftSchema = z.object({
+  title: z.string().min(1, "NFT Title is required"),
+  postedby: z.string().min(1, "Author is required"),
+  short_description: z.string().min(1, "Short description is required"),
+  about_author: z.string().min(1, "About author is required"),
+  amount: z.string().min(1, "Amount is required"),
+  status: z.string().min(1, "Status is required"),
+  period: z.string().min(1, "Period is required"),
+});

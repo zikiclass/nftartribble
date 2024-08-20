@@ -50,6 +50,7 @@ const AdminNew = () => {
                 name="email"
                 placeholder="Email Address"
                 {...register("email")}
+                className={styles.input_}
               />
               {errors.email && <p>{errors.email.message}</p>}
             </div>
@@ -60,6 +61,7 @@ const AdminNew = () => {
                 name="password"
                 placeholder="Password"
                 {...register("password")}
+                className={styles.input_}
               />
               {errors.password && <p>{errors.password.message}</p>}
             </div>
@@ -70,6 +72,7 @@ const AdminNew = () => {
                 name="confirm_password"
                 placeholder="Confirm Password"
                 {...register("confirmPassword")}
+                className={styles.input_}
               />
               {errors.confirmPassword && (
                 <p>{errors.confirmPassword.message}</p>

@@ -20,6 +20,20 @@ model Administrators {
   date     DateTime?
 }
 
+model nftdrop {
+  id                Int       @id @default(autoincrement())
+  title             String?
+  postedby          String?
+  short_description String?   @db.LongText
+  about_author      String?   @db.LongText
+  amount            String?
+  status            String?
+  period            String?
+  authorImg         String?
+  NFTImg            String?
+  date              DateTime?
+}
+
 model User {
   id            String          @id @default(cuid())
   name          String?

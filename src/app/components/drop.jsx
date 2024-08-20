@@ -3,11 +3,23 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { CldImage } from "next-cloudinary";
 const Drop = ({ small, name, minting, price, bg, status }) => {
   return (
     <Link href="/">
       <Container>
-        <Div bg={bg}>
+        <Div>
+          <CldImage
+            src={bg}
+            width={100}
+            height={200}
+            alt="NFT Image"
+            style={{
+              width: "100%",
+              height: "200px",
+            }}
+          />
+
           <Button>Mint Now</Button>
         </Div>
         <Small>
@@ -72,11 +84,7 @@ const Button = styled.button`
 `;
 
 const Div = styled.div`
-  background-image: url(${(props) => props.bg});
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 200px;
+  overflow: hidden;
   border-radius: 13px;
   position: relative;
   &:hover ${Button} {
