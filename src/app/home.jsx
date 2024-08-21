@@ -30,5 +30,5 @@ const Div = styled.div`
   height: 100%;
   gap: 1rem;
   border-radius: 15px;
-  border: 1px solid rgb(27, 35, 110);
+  border: 1px solid #2b2e31;
 `;

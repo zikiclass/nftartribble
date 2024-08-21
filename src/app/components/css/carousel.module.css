@@ -5,7 +5,7 @@
    width: 100%;
    height: 100vh;
 }
-.slide1, .slide2, .slide3, .slide4, .slide5{
+.slide0, .slide1, .slide2, .slide3, .slide4{
     margin-top: 5rem;
     background-image: url(../../../../public/slide1bg.png);
     width: 100%;
@@ -20,33 +20,34 @@
     top: 0;
     left: 100%;
 }
-.slide1.active, .slide2.active, .slide3.active, .slide4.active, .slide5.active{
+.slide0.active, .slide1.active, .slide2.active, .slide3.active, .slide4.active{
     left: 0;
-    transition: all 0.5s ease-out;
+    /* transition: all 0.5s ease-out; */
 }
-.slide2{
+.slide1{
     background-image: linear-gradient(#333333, #000);
     background-size: cover;
 }
-.slide3{
+.slide2{
     background-image: linear-gradient(45deg,
     rgba(245, 70, 66, 0.95),
     rgba(8, 83, 156, 0.75)), url(../../../../public/GT-wBtzWsAAZ3mT.jpg);
     background-size: cover;
 }
-.slide4{
+.slide3{
     background-image: linear-gradient(45deg,
     rgba(77, 14, 13, 0.95),
     rgba(156, 8, 122, 0.75)), url(../../../../public/Project-Pharos-on-Rarible.png);
     background-size: cover;
 }
-.slide5{
+.slide4{
     background-image: url(../../../../public/bk2.png);
     background-size: cover;
 }
 .bgImg{
     border-radius: 15px;
     width: 460px;
+    height: 450px;
     flex: 1;
 }
 .slide_content{
@@ -127,18 +128,15 @@
     color: #fff;
 }
 .number, .number_{
-    background-color: #A679F3;
+    background: transparent;
     display: flex;
-    padding: 10px 14px;
+    padding: 6px 14px;
     gap: 20px;
     border-radius: 8px;
     cursor: pointer;
-    border: 1px solid #b791f9;
+    border: 1px solid #fff;
 }
-.number_{
-    background-color: #722357;
-    border: 1px solid #b43f8b;
-}
+
 .number_count, .number_count_{
     
     padding: 2px 6px;
@@ -146,12 +144,7 @@
     cursor: pointer;
 
 }
-.number_count_:hover{
-    background-color: #4b0c35;
-}
-.number_count:hover{
-    background-color: #7E52CC;
-}
+
 .minted{
     display: flex;
     align-items: center;
@@ -176,11 +169,11 @@
 
 
 @media screen and (max-width: 760px){
-    .slide1, .slide2, .slide3, .slide4, .slide5{
+    .slide0, .slide1, .slide2, .slide3, .slide4{
         height: 100%!important;
         flex-direction: column;
         padding: 20px;
-        gap: 0.5rem;
+        gap: 0rem;
     }
     .bgImg{
         width: 350px;
@@ -192,6 +185,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: -3rem;
     }
     .slide_content p{
         text-align: center;

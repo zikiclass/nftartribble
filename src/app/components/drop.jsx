@@ -4,9 +4,9 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { CldImage } from "next-cloudinary";
-const Drop = ({ small, name, minting, price, bg, status }) => {
+const Drop = ({ small, name, minting, price, bg, status, id }) => {
   return (
-    <Link href="/">
+    <Link href={`/mint?id=${id}`}>
       <Container>
         <Div>
           <CldImage
@@ -55,7 +55,7 @@ const Container = styled.div`
   gap: 5px;
   width: 250px;
   overflow: hidden;
-  border: 1.5px solid rgb(27, 35, 110);
+  border: 1.5px solid #2b2e31;
   padding: 8px;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;

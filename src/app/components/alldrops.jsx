@@ -35,6 +35,7 @@ const AllDrops = () => {
               price={drop.amount}
               bg={drop.NFTImg}
               status={drop.status}
+              id={drop.id}
             />
           </div>
         ))}
