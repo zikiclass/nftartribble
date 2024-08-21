@@ -15,6 +15,10 @@ export default function Mint() {
     const nftId = searchParams.get("id");
     setId(nftId);
   }, [searchParams]);
+
+  if (id === null) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <Navbar />
