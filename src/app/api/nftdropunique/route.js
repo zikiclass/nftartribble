@@ -3,12 +3,19 @@ import prisma from "../../../../prisma/client";
 
 export async function GET(req) {
   try {
-    const nftID = req.nextUrl.searchParams.get("id");
-    const id = parseInt(nftID);
+    const url = new URL(req.url, `http://${req.headers.host}`);
+    const nftID = url.searchParams.get("id");
+    const id = parseInt(nftID, 10);
+
+    if (isNaN(id)) {
+      return NextResponse.json(
+        { message: "Invalid ID format" },
+        { status: 400 }
+      );
+    }
+
     const nft = await prisma.nftdrop.findUnique({
-      where: {
-        id,
-      },
+      where: { id },
     });
 
     if (nft) {
@@ -17,7 +24,10 @@ export async function GET(req) {
       return NextResponse.json({ message: "NFT not found" }, { status: 404 });
     }
   } catch (error) {
-    console.error("Error fetching nft:", error);
-    return NextResponse.json(body.email, { status: 500 });
+    console.error("Error fetching NFT:", error);
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
