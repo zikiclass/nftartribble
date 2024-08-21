@@ -9,10 +9,12 @@ import axios from "axios";
 import { useSearchParams } from "next/navigation";
 export default function Mint() {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  const [id, setId] = useState(null);
+
   useEffect(() => {
-    const getNFT = () => {};
-  }, []);
+    const nftId = searchParams.get("id");
+    setId(nftId);
+  }, [searchParams]);
   return (
     <>
       <Navbar />

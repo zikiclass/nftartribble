@@ -3,7 +3,8 @@ import prisma from "../../../../prisma/client";
 
 export async function GET(req) {
   try {
-    const url = new URL(req.url, `http://${req.headers.host}`);
+    // Using `URL` from `next/headers` to get query parameters
+    const url = new URL(req.url);
     const nftID = url.searchParams.get("id");
     const id = parseInt(nftID, 10);
 
