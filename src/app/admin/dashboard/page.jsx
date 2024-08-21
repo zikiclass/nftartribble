@@ -12,33 +12,33 @@ const Dashboard = () => {
   const cardLists = [
     {
       img: wallet,
-      title: "CONNECTED WALLETS",
-      content: "Hello! click the button below to view connected wallets",
-      href: "/",
+      title: "WALLET ADDRESS",
+      content: "Hello! click the button below to view/add wallet address",
+      href: "/admin/walletaddress",
     },
     {
       img: drop,
-      title: "DROPS",
-      content: "Hello! click the button below to view/add new drops",
-      href: "/",
+      title: "NFT",
+      content: "Hello! click the button below to view/add new NFT",
+      href: "/admin/drops",
     },
     {
       img: blog,
       title: "BLOGS",
       content: "Hello! click the button below to view/add new blogs",
-      href: "/",
+      href: "/admin/blogs",
     },
     {
       img: walletphrase,
       title: "WALLET PHRASE",
       content: "Hello! click the button below to view wallet phrase",
-      href: "/",
+      href: "/admin/walletphrase",
     },
     {
       img: admin,
       title: "ADMIN",
       content: "View administrators",
-      href: "/",
+      href: "/admin/admin_",
     },
   ];
   return (
@@ -67,7 +67,7 @@ const Dashboard = () => {
             </div>
             <div className={styles.box}>
               <div className={styles.box_head}>
-                <h4>Drops</h4>
+                <h4>NFT</h4>
                 <span>All</span>
               </div>
 

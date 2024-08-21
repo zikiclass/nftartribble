@@ -1,0 +1,163 @@
+.container{
+    display: flex;
+}
+
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logo_main{
+    display: flex;
+}
+.logo_wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 1.4rem;
+}
+.logo_wrap span{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    position: relative;
+}
+.logo_wrap span:after{
+    width: 40%;
+    height: 2px;
+    background-color: var(--sharp-blue);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+}
+.content1{
+    background-image: url(../../../public/2933578.jpg);
+    background-position: 70%;
+    background-size: cover;
+    width: 400px;
+    height: 100vh;
+    padding: 2rem;
+    position: fixed;
+}
+.content2{
+ padding: 4rem;
+ margin-left: 500px;
+ width: 40%;
+}
+
+
+.connect h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+.connect p{
+    font-size: 16px;
+    margin-bottom: 1.4rem;
+    color: #AAB3B7;
+}
+.connect p span{
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.popular {
+    color: #AAB3B7;
+    font-weight: 500;
+    margin-top: 1.4rem;
+}
+
+.cryptos{
+    display: flex;
+    flex-direction: column;
+}
+.crypto{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0.4rem 0px;
+    border-radius: 10px;
+    border: 1px solid #2E3133;
+    padding: 0.7rem 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    justify-content: space-between;
+}
+.cryp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.crypto button{
+    background-color: #043a4c;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 7px;
+}
+.crypto:hover{
+    background-color: #2E3133;
+}
+.crypto span{
+    font-size: 14px;
+    font-weight: 500;
+}
+.img{
+    width: 35px;
+    height: 30px;
+    border-radius: 50%;
+}
+.close{
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    padding: 5px;
+    border: 1px solid #646a6c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+}
+.close:hover{
+    border-color: #AAB3B7;
+}
+
+.button{
+    text-align: center;
+    margin: 1rem 0px;
+    border-radius: 10px;
+    border: 1px solid #2E3133;
+    padding: 0.5rem 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+@media screen and (max-width: 760px){
+    .container{
+        flex-direction: column;
+    }
+    .content1{
+        height: 10%;
+        position: relative;
+        background-image: none;
+    }
+    .content2{
+        margin: 0px;
+        width: 100%;
+        padding: 2rem;
+    }
+    .cryp span{
+        font-size: 12px;
+        display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+}

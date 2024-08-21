@@ -122,7 +122,7 @@ const Carousel = () => {
                   +
                 </span>
               </div>
-              <Link href="/" className={styles.connect}>
+              <Link href="/makepayment" className={styles.connect}>
                 Mint for {nft.amount}
               </Link>
             </div>

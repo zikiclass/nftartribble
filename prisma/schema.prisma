@@ -34,6 +34,19 @@ model nftdrop {
   date              DateTime?
 }
 
+model Cryptocurrency {
+  id     Int     @id @default(autoincrement())
+  crypto String?
+  wallet String?
+}
+
+model Blog {
+  id      Int     @id @default(autoincrement())
+  author  String?
+  heading String?
+  content String? @db.LongText
+}
+
 model User {
   id            String          @id @default(cuid())
   name          String?
