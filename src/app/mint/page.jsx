@@ -1,29 +1,17 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense } from "react";
 import Navbar from "../components/navbar";
-import CarouselMint from "../components/carouselmint";
-import AboutMint from "../components/aboutmint";
 import QuickSignUp from "../components/quicksignup";
 import Footer from "../components/footer";
-import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import MintClient from "../components/mintclient";
+
 export default function Mint() {
-  const searchParams = useSearchParams();
-  const [id, setId] = useState(null);
-
-  useEffect(() => {
-    const nftId = searchParams.get("id");
-    setId(nftId);
-  }, [searchParams]);
-
-  if (id === null) {
-    return <div>Loading...</div>;
-  }
   return (
     <>
       <Navbar />
-      <CarouselMint id={id} />
-      <AboutMint id={id} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <MintClient />
+      </Suspense>
       <QuickSignUp />
       <Footer />
     </>
