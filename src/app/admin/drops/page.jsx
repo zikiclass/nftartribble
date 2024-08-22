@@ -63,6 +63,14 @@ const Drops = () => {
       }
     });
   };
+  const [menu, setMenu] = useState(true);
+  const closeMenu = () => {
+    setMenu(false);
+  };
+  const openMenu = () => {
+    setMenu(true);
+  };
+
   const { data: session, status } = useSession();
 
   if (status === "unauthenticated") {
@@ -70,8 +78,10 @@ const Drops = () => {
   }
   return (
     <div className={styles.container}>
-      <SideBar />
-      <Content>
+      <SideBar menu={menu} handleClose={openMenu} />
+      <Content menu={menu}>
+        <NavBar menu={menu} closeMenu={closeMenu} openMenu={openMenu} />
+
         <h3>NFTs</h3>
         <div className={styles.content}>
           <Link href="/admin/dropnew" className={styles.btnAdd}>

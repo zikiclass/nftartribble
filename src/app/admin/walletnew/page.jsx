@@ -58,10 +58,20 @@ const WalletNew = () => {
   if (status === "unauthenticated") {
     router.push("/admin/signin");
   }
+
+  const [menu, setMenu] = useState(true);
+  const closeMenu = () => {
+    setMenu(false);
+  };
+  const openMenu = () => {
+    setMenu(true);
+  };
   return (
     <div className={styles.container}>
-      <SideBar />
-      <Content>
+      <SideBar menu={menu} handleClose={openMenu} />
+      <Content menu={menu}>
+        <NavBar menu={menu} closeMenu={closeMenu} openMenu={openMenu} />
+
         <h3>New Wallet Address</h3>
         <div className={styles.content}>
           <Link href="/admin/walletaddress" className={styles.btnBack}>

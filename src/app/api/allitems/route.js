@@ -6,8 +6,11 @@ export async function GET(req) {
     const admin = await prisma.administrators.aggregate({
       _count: { email: true },
     });
-    if (admin) {
-      return NextResponse.json({ admin }, { status: 200 });
+    const NFT = await prisma.nftdrop.aggregate({
+      _count: { id: true },
+    });
+    if (admin && NFT) {
+      return NextResponse.json({ admin, NFT }, { status: 200 });
     } else {
       return NextResponse.json("Unable to get request", { status: 404 });
     }

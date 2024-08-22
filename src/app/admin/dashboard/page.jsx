@@ -13,9 +13,27 @@ import Card from "../components/card";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import NavBar from "../components/navbar";
+import axios from "axios";
 const Dashboard = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const [allAdmin, setAllAdmin] = useState([]);
+  const [allNFT, setAllNFT] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/allitems");
+        if (response.data) {
+          setAllAdmin(response.data.admin._count.email);
+          setAllNFT(response.data.NFT._count.id);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, [allAdmin, allNFT]);
+
   const cardLists = [
     {
       img: wallet,
@@ -91,7 +109,7 @@ const Dashboard = () => {
               </div>
 
               <div className={styles.box_content}>
-                <h4>19</h4>
+                <h4>{allNFT}</h4>
                 <span>
                   12.5% <ArrowUpwardIcon className={styles.percent} />
                 </span>
@@ -125,7 +143,7 @@ const Dashboard = () => {
               </div>
 
               <div className={styles.box_content}>
-                <h4>19</h4>
+                <h4>{allAdmin}</h4>
                 <span>
                   12.5% <ArrowUpwardIcon className={styles.percent} />
                 </span>

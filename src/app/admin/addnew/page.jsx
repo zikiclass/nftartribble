@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SideBar from "../components/sidebar";
 import Content from "../components/content";
 import styles from "../dashboard/dashboard.module.css";
@@ -23,10 +23,19 @@ const AdminNew = () => {
   if (status === "unauthenticated") {
     router.push("/admin/signin");
   }
+  const [menu, setMenu] = useState(true);
+  const closeMenu = () => {
+    setMenu(false);
+  };
+  const openMenu = () => {
+    setMenu(true);
+  };
   return (
     <div className={styles.container}>
-      <SideBar />
-      <Content>
+      <SideBar menu={menu} handleClose={openMenu} />
+      <Content menu={menu}>
+        <NavBar menu={menu} closeMenu={closeMenu} openMenu={openMenu} />
+
         <h3>Administrators</h3>
         <div className={styles.content}>
           <Link href="/admin/admin_" className={styles.btnBack}>
