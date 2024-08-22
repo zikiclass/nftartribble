@@ -8,6 +8,7 @@ import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import NavBar from "../components/navbar";
 import axios from "axios";
 import Swal from "sweetalert2";
 const WalletNew = () => {

@@ -12,6 +12,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const Admin = () => {
   const { data: session, status } = useSession();
   const router = useRouter();

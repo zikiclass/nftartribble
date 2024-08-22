@@ -14,6 +14,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useSession } from "next-auth/react";
 import { CldUploadWidget, CldImage } from "next-cloudinary";
+import NavBar from "../components/navbar";
 const DropNew = () => {
   const [authorImg, setAuthorImg] = useState("");
   const [nftImg, setNFTimg] = useState("");

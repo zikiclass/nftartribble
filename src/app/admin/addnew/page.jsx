@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const AdminNew = () => {
   const router = useRouter();
   const { data: session, status } = useSession();

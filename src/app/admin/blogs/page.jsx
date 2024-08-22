@@ -5,6 +5,7 @@ import Content from "../components/content";
 import styles from "../dashboard/dashboard.module.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const Blogs = () => {
   const router = useRouter();
   const { data: session, status } = useSession();

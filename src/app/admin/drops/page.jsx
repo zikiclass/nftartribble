@@ -12,6 +12,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { CldImage } from "next-cloudinary";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const Drops = () => {
   const router = useRouter();
   const temp = [1, 2, 3, 4, 5, 6];

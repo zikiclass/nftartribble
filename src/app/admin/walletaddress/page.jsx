@@ -11,6 +11,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const WalletAddress = () => {
   const temp = [1, 2, 3, 4, 5, 6];
   const [lists, setList] = useState([]);
