@@ -10,7 +10,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const Admin = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const temp = [1, 2, 3, 4, 5, 6];
   const [lists, setList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -63,7 +67,9 @@ const Admin = () => {
       }
     });
   };
-
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />

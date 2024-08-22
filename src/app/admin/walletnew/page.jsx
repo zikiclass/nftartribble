@@ -7,6 +7,7 @@ import UndoIcon from "@mui/icons-material/Undo";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import axios from "axios";
 import Swal from "sweetalert2";
 const WalletNew = () => {
@@ -52,6 +53,11 @@ const WalletNew = () => {
     const defaultCrypto = filteredCryptoList[0]?.crypto || "";
     setCrypto(defaultCrypto);
   }, [lists]);
+  const { data: session, status } = useSession();
+
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />

@@ -63,12 +63,12 @@ export async function DELETE(req) {
   try {
     const adminId = req.nextUrl.searchParams.get("id");
     const id = parseInt(adminId);
-    const deleteAdmin = await prisma.administrators.delete({
+    const deleteNFT = await prisma.nftdrop.delete({
       where: {
         id,
       },
     });
-    if (deleteAdmin) return NextResponse.json("success", { status: 200 });
+    if (deleteNFT) return NextResponse.json("success", { status: 200 });
     return NextResponse.json("error", { status: 404 });
   } catch (error) {
     return NextResponse.json(error, { status: 500 });

@@ -19,12 +19,14 @@ const MakePayment = () => {
     "Lite Coin": bitgetwallet,
   };
   const [lists, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const getWallet = async () => {
     const response = await axios.get(`/api/wallet`);
     if (response.data) setList(response.data);
   };
   useEffect(() => {
     getWallet();
+    setLoading(false);
   }, []);
   const handleCopy = async (text) => {
     await navigator.clipboard.writeText(text);
@@ -48,7 +50,18 @@ const MakePayment = () => {
             Proceed to copy any of the wallet suitable to you to make your
             payment.
           </p>
-
+          {loading && (
+            <div className={styles.cryptos}>
+              <span className={styles.popular}>...</span>
+              <div className={styles.crypto}>
+                <div className={styles.cryp}>
+                  ...
+                  <span>...</span>
+                </div>
+                <button>...</button>
+              </div>
+            </div>
+          )}
           <div className={styles.cryptos}>
             {lists.map((list, index) => (
               <>

@@ -8,6 +8,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 const Login = () => {
+  const router = useRouter();
   const handleSignIn = async (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
@@ -32,8 +33,9 @@ const Login = () => {
   return (
     <>
       <div className={styles.container}>
-        <form action="" className={styles.content} onSubmit={handleSignIn}>
+        <form className={styles.content} onSubmit={handleSignIn}>
           <Image src={logo} alt={name} className={styles.logo} />
+          <Toaster position="bottom-left" />
           <div className={styles.input}>
             <label>Email address</label>
             <input

@@ -9,7 +9,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const WalletAddress = () => {
   const temp = [1, 2, 3, 4, 5, 6];
   const [lists, setList] = useState([]);
@@ -18,6 +19,7 @@ const WalletAddress = () => {
     const response = await axios.get(`/api/wallet`);
     if (response.data) setList(response.data);
   };
+  const router = useRouter();
   useEffect(() => {
     getWallet();
     setLoading(false);
@@ -71,6 +73,12 @@ const WalletAddress = () => {
   const filteredCryptoList = cryptoList.filter(
     (crypList) => !lists.some((list) => list.crypto === crypList.crypto)
   );
+
+  const { data: session, status } = useSession();
+
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />

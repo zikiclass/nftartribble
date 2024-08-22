@@ -6,12 +6,12 @@
     color: #1E222D;
     padding: 1rem;
     position: relative;
-    margin-left: 245px;
+    transition: all 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 760px){
     .container{
-        margin-left: 60px;
+        margin-left: 0px!important;
         
     }
 }

@@ -1,3 +1,5 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import SideBar from "../components/sidebar";
 import Content from "../components/content";
 import styles from "./dashboard.module.css";
@@ -8,7 +10,12 @@ import blog from "../../../../public/XaBEs80WdnRF4HDwgC9SHdjOolbZiYncIPxe49uu5Hg
 import walletphrase from "../../../../public/0_lzwWHNY2ZALys-f8.png";
 import admin from "../../../../public/360_F_227450952_KQCMShHPOPebUXklULsKsROk5AvN6H1H.jpg";
 import Card from "../components/card";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import NavBar from "../components/navbar";
 const Dashboard = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const cardLists = [
     {
       img: wallet,
@@ -41,10 +48,22 @@ const Dashboard = () => {
       href: "/admin/admin_",
     },
   ];
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
+
+  const [menu, setMenu] = useState(true);
+  const closeMenu = () => {
+    setMenu(false);
+  };
+  const openMenu = () => {
+    setMenu(true);
+  };
   return (
     <div className={styles.container}>
-      <SideBar />
-      <Content>
+      <SideBar menu={menu} handleClose={openMenu} />
+      <Content menu={menu}>
+        <NavBar menu={menu} closeMenu={closeMenu} openMenu={openMenu} />
         <h3>Dashboard</h3>
         <div className={styles.dash}>
           <div className={styles.analysis}>

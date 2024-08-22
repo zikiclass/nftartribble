@@ -35,8 +35,8 @@ export const authOptions = {
   },
 
   pages: {
-    signIn: "/admin/signin",
-    error: "/admin/signin",
+    signIn: "/signin",
+    error: "/signin",
   },
 
   database: process.env.DATABASE_URL,

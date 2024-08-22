@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useSession } from "next-auth/react";
 import { CldUploadWidget, CldImage } from "next-cloudinary";
 const DropNew = () => {
   const [authorImg, setAuthorImg] = useState("");
@@ -22,6 +23,11 @@ const DropNew = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: zodResolver(nftSchema) });
+  const { data: session, status } = useSession();
+
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />

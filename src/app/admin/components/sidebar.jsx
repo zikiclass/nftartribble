@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from "react";
 import styles from "./css/sidebar.module.css";
 import logo from "../../../../public/logo.png";
 import Image from "next/image";
@@ -10,9 +12,15 @@ import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import WalletIcon from "@mui/icons-material/Wallet";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
-const SideBar = () => {
+import LogoutIcon from "@mui/icons-material/Logout";
+import CloseIcon from "@mui/icons-material/Close";
+const SideBar = ({ menu, handleClose }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${!menu && styles.cont}`}
+      style={{ width: menu ? "250px" : "0px" }}
+    >
+      <CloseIcon className={styles.close} onClick={handleClose} />
       <div className={styles.logoDiv}>
         <Image src={logo} alt="logo" className={styles.logo} />
         <span>{name}</span>
@@ -46,6 +54,10 @@ const SideBar = () => {
         <Link href="/admin/walletaddress" className={styles.link}>
           <AccountBalanceWalletIcon />
           <span>Wallet Address</span>
+        </Link>
+        <Link href="/api/auth/signout" className={styles.link}>
+          <LogoutIcon />
+          <span>Sign Out</span>
         </Link>
       </div>
     </div>

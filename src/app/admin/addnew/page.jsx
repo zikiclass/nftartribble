@@ -11,13 +11,19 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const AdminNew = () => {
   const router = useRouter();
+  const { data: session, status } = useSession();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: zodResolver(adminSchema) });
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />

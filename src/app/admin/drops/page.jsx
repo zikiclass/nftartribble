@@ -5,13 +5,15 @@ import styles from "../dashboard/dashboard.module.css";
 import Link from "next/link";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { format, parseISO } from "date-fns";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { CldImage } from "next-cloudinary";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const Drops = () => {
+  const router = useRouter();
   const temp = [1, 2, 3, 4, 5, 6];
   const [lists, setList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,10 +28,7 @@ const Drops = () => {
   useEffect(() => {
     setLoading(false);
   }, [lists]);
-  const formatDate = (dateString) => {
-    const date = parseISO(dateString);
-    return format(date, "EEEE dd, MMMM yyyy hh:mm:ss a");
-  };
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -41,30 +40,34 @@ const Drops = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const deleteAdmin = async () => {
-          const response = await axios.delete("/api/register", {
+        const deleteNFT = async () => {
+          const response = await axios.delete("/api/nftdrop", {
             params: { id },
           });
           if (response.status === 200) {
             getNFT();
             Swal.fire({
               title: "Deleted!",
-              text: "Admin record has been deleted.",
+              text: "NFT record has been deleted.",
               icon: "success",
             });
           } else {
             Swal.fire({
               title: "Error!",
-              text: "Unable to delete record",
+              text: "Unable to delete NFT",
               icon: "error",
             });
           }
         };
-        deleteAdmin();
+        deleteNFT();
       }
     });
   };
+  const { data: session, status } = useSession();
 
+  if (status === "unauthenticated") {
+    router.push("/admin/signin");
+  }
   return (
     <div className={styles.container}>
       <SideBar />
