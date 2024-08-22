@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { adminSchema } from "@/app/validationSchemas";
 import toast, { Toaster } from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useSession } from "next-auth/react";
