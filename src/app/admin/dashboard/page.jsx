@@ -55,12 +55,12 @@ const Dashboard = () => {
       content: "Hello! click the button below to view/add new blogs",
       href: "/admin/blogs",
     },
-    {
-      img: walletphrase,
-      title: "WALLET PHRASE",
-      content: "Hello! click the button below to view wallet phrase",
-      href: "/admin/walletphrase",
-    },
+    // {
+    //   img: walletphrase,
+    //   title: "WALLET PHRASE",
+    //   content: "Hello! click the button below to view wallet phrase",
+    //   href: "/admin/walletphrase",
+    // },
     {
       img: admin,
       title: "ADMIN",
@@ -87,7 +87,7 @@ const Dashboard = () => {
         <h3>Dashboard</h3>
         <div className={styles.dash}>
           <div className={styles.analysis}>
-            <div className={styles.box}>
+            {/* <div className={styles.box}>
               <div className={styles.box_head}>
                 <h4>Connected Users</h4>
                 <span>All</span>
@@ -103,7 +103,7 @@ const Dashboard = () => {
               <div className={styles.box_footer}>
                 <div className={styles.box_footer_content}></div>
               </div>
-            </div>
+            </div> */}
             <div className={styles.box}>
               <div className={styles.box_head}>
                 <h4>NFT</h4>

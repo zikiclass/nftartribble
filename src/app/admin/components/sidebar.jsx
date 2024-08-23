@@ -31,10 +31,10 @@ const SideBar = ({ menu, handleClose }) => {
           <HouseSidingIcon />
           <span>Dashboard</span>
         </Link>
-        <Link href="/admin/connectedwallets" className={styles.link}>
+        {/* <Link href="/admin/connectedwallets" className={styles.link}>
           <ChangeCircleIcon />
           <span>Connected Wallets</span>
-        </Link>
+        </Link> */}
         <Link href="/admin/drops" className={styles.link}>
           <CurrencyBitcoinIcon />
           <span>NFTs</span>
@@ -43,10 +43,10 @@ const SideBar = ({ menu, handleClose }) => {
           <RssFeedIcon />
           <span>Blogs</span>
         </Link>
-        <Link href="/admin/walletphrase" className={styles.link}>
+        {/* <Link href="/admin/walletphrase" className={styles.link}>
           <WalletIcon />
           <span>Wallet Phrase</span>
-        </Link>
+        </Link> */}
         <Link href="/admin/admin_" className={styles.link}>
           <SupervisorAccountIcon />
           <span>Admin</span>
