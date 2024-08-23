@@ -16,9 +16,7 @@ const LatestDrops = () => {
     getDrops();
   }, []);
 
-  useEffect(() => {
-    console.log(drops);
-  }, [drops]);
+  useEffect(() => {}, [drops]);
 
   return (
     <div className={styles.container}>
