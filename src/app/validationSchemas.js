@@ -26,3 +26,11 @@ export const nftSchema = z.object({
   status: z.string().min(1, "Status is required"),
   period: z.string().min(1, "Period is required"),
 });
+export const blogSchema = z.object({
+  author: z.string().min(1, "Author is required"),
+  heading: z.string().min(1, "Heading is required"),
+  content1: z.string().min(1, "First paragraph is required"),
+  content2: z.string(),
+  content3: z.string(),
+  content4: z.string(),
+});

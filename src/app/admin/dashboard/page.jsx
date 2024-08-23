@@ -19,6 +19,7 @@ const Dashboard = () => {
   const router = useRouter();
   const [allAdmin, setAllAdmin] = useState([]);
   const [allNFT, setAllNFT] = useState([]);
+  const [allBlogs, setAllBlogs] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,13 +27,14 @@ const Dashboard = () => {
         if (response.data) {
           setAllAdmin(response.data.admin._count.email);
           setAllNFT(response.data.NFT._count.id);
+          setAllBlogs(response.data.blogs._count.id);
         }
       } catch (e) {
         console.log(e);
       }
     };
     fetchData();
-  }, [allAdmin, allNFT]);
+  }, [allAdmin, allNFT, allBlogs]);
 
   const cardLists = [
     {
@@ -92,7 +94,7 @@ const Dashboard = () => {
               </div>
 
               <div className={styles.box_content}>
-                <h4>19</h4>
+                <h4>0</h4>
                 <span>
                   12.5% <ArrowUpwardIcon className={styles.percent} />
                 </span>
@@ -126,7 +128,7 @@ const Dashboard = () => {
               </div>
 
               <div className={styles.box_content}>
-                <h4>19</h4>
+                <h4>{allBlogs}</h4>
                 <span>
                   12.5% <ArrowUpwardIcon className={styles.percent} />
                 </span>

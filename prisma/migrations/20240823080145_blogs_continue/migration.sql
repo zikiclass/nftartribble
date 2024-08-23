@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Blog` ADD COLUMN `blogImg` VARCHAR(191) NULL;
