@@ -33,7 +33,7 @@
 .logo_wrap span:after{
     width: 40%;
     height: 2px;
-    background-color: var(--sharp-blue);
+    background-color: #F8A955;
     content: "";
     position: absolute;
     left: 0;
