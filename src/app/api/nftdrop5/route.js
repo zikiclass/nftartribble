@@ -17,6 +17,6 @@ export async function GET(request) {
     }
   } catch (error) {
     console.error("Error fetching nft:", error);
-    return NextResponse.json(body.email, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
