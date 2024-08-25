@@ -6,7 +6,7 @@ export async function GET(request) {
     const nft = await prisma.nftdrop.findMany({
       take: 5,
       orderBy: {
-        id: "desc",
+        id: "asc",
       },
     });
 
