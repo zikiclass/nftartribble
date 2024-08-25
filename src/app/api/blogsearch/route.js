@@ -3,9 +3,16 @@ import prisma from "../../../../prisma/client";
 
 export async function GET(req) {
   try {
+    // Use req.nextUrl to parse query parameters
     const url = new URL(req.url);
-    const searchParams = new URLSearchParams(url.searchParams);
-    const id = searchParams.get("id");
+    const id = url.searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json(
+        { message: "ID parameter is missing" },
+        { status: 400 }
+      );
+    }
 
     const blog = await prisma.blog.findUnique({
       where: {
@@ -19,14 +26,22 @@ export async function GET(req) {
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
   } catch (error) {
-    console.error("Error fetching nft:", error);
-    return NextResponse.json(body.email, { status: 500 });
+    console.error("Error fetching blog:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 
 export async function PUT(req) {
   try {
     const body = await req.json();
+
+    // Check if all required fields are present
+    if (!body.id || !body.author || !body.headline) {
+      return NextResponse.json(
+        { message: "Required fields are missing" },
+        { status: 400 }
+      );
+    }
 
     const updateBlog = await prisma.blog.update({
       where: { id: parseInt(body.id) },
@@ -39,10 +54,14 @@ export async function PUT(req) {
         content4: body.content4,
       },
     });
+
     if (updateBlog) {
       return NextResponse.json("Blog updated successfully", { status: 200 });
+    } else {
+      return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
   } catch (error) {
-    return NextResponse.json({ error: error.message, status: 500 });
+    console.error("Error updating blog:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
