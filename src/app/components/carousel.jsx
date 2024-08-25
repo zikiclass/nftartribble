@@ -40,7 +40,7 @@ const Carousel = () => {
       );
     };
 
-    const intervalId = setInterval(updateActiveSlide, 10000);
+    const intervalId = setInterval(updateActiveSlide, 2000);
     return () => clearInterval(intervalId);
   }, [nfts.length]);
 

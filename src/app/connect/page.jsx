@@ -15,15 +15,31 @@ import portis from "../../../public/portis.svg";
 import WhatisWallet from "../components/whatiswallet";
 const ConnectWallet = () => {
   const cryptos = [
-    { title: "Coinbase Wallet", icon: coinbase },
-    { title: "Passkeys", icon: passkey },
-    { title: "WalletConnect", icon: walletconnect },
-    { title: "Install Bitget Wallet", icon: bitgetwallet },
-    { title: "Install MetaMask", icon: metamask },
+    {
+      title: "Coinbase Wallet",
+      icon: coinbase,
+      href: "https://www.coinbase.com/wallet",
+    },
+    { title: "Passkeys", icon: passkey, href: "https://my.passkeys.network" },
+    {
+      title: "WalletConnect",
+      icon: walletconnect,
+      href: "https://cloud.walletconnect.com/sign-up",
+    },
+    {
+      title: "Install Bitget Wallet",
+      icon: bitgetwallet,
+      href: "https://web3.bitget.com/en",
+    },
+    { title: "Install MetaMask", icon: metamask, href: "https://metamask.io/" },
   ];
   const moreCryptos = [
-    { title: "Torus", icon: torus },
-    { title: "Portis", icon: portis },
+    {
+      title: "Torus",
+      icon: torus,
+      href: "https://app.tor.us/v1.10.14/wallet/topup",
+    },
+    { title: "Portis", icon: portis, href: "https://www.portis.io/" },
   ];
   const [more, setMore] = useState(false);
   const [moreTitle, setMoreTitle] = useState("Show more");
@@ -57,14 +73,19 @@ const ConnectWallet = () => {
 
           <div className={styles.cryptos}>
             {cryptos.map((crypto, index) => (
-              <div className={styles.crypto} key={index}>
+              <Link
+                className={styles.crypto}
+                key={index}
+                href={crypto.href}
+                target="_blank"
+              >
                 <Image
                   src={crypto.icon}
                   alt={crypto.title}
                   className={styles.img}
                 />
                 <span>{crypto.title}</span>
-              </div>
+              </Link>
             ))}
           </div>
           {more && (

@@ -120,12 +120,19 @@ const Blogs = () => {
                     </td>
 
                     <td>
+                      <Link
+                        href={`blogedit?id=${list.id}`}
+                        className={styles.btnSubmit}
+                      >
+                        <span>Edit</span>
+                      </Link>{" "}
+                      <br />
+                      <br />
                       <button
                         onClick={() => handleDelete(list.id)}
                         className={styles.btnDelete}
                       >
-                        <span>Delete</span>{" "}
-                        <DeleteIcon style={{ fontSize: "13px" }} />
+                        <span>Delete</span>
                       </button>
                     </td>
                   </tr>
