@@ -29,6 +29,7 @@ export async function POST(request) {
         period: body.period,
         authorImg: body.authorImg,
         NFTImg: body.nftImg,
+        NFTImgFormat: body.nftImgFormat,
         date: date_created,
       },
     });

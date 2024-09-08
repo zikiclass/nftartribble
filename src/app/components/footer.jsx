@@ -11,7 +11,6 @@ const Footer = () => {
       <div className={styles.content}>
         <Link href="/" className={styles.logo_wrap}>
           <Image src={logo} className={styles.logo} alt={name} />
-          <span>{name}</span>
         </Link>
 
         <div className={styles.content1}>
