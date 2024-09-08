@@ -22,7 +22,6 @@ const Navbar = () => {
           <div className={styles.logo_main}>
             <Link href="/" className={styles.logo_wrap}>
               <Image src={logo} className={styles.logo} alt={name} />
-              <span>{name}</span>
             </Link>
 
             <div className={styles.search}>
