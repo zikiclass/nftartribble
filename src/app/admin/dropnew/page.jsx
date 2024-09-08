@@ -18,6 +18,7 @@ import NavBar from "../components/navbar";
 const DropNew = () => {
   const [authorImg, setAuthorImg] = useState("");
   const [nftImg, setNFTimg] = useState("");
+  const [nftImgFormat, setNftImgFormat] = useState("");
   const router = useRouter();
   const {
     register,
@@ -149,6 +150,7 @@ const DropNew = () => {
                 onUpload={(result, widget) => {
                   if (result.event !== "success") return;
                   setNFTimg(result.info.public_id);
+                  setNftImgFormat(result.info.format);
                 }}
               >
                 {({ open }) => (
@@ -181,6 +183,7 @@ const DropNew = () => {
                     ...data,
                     authorImg,
                     nftImg,
+                    nftImgFormat,
                   });
                   Swal.fire({
                     title: "Success!",
