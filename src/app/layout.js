@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     script.async = true;
     script.onload = () => {
       window._smartsupp = window._smartsupp || {};
-      window._smartsupp.key = "8dc40739dd488afea819d6f8e1ce69f27fd52230";
+      window._smartsupp.key = "a228e1a7e48a5f6f9bfe8c5c8c582883666d6855";
     };
     document.head.appendChild(script);
 
