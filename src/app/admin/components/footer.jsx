@@ -8,7 +8,7 @@ const Footer = () => {
         {currentYear} &copy; {name}
       </span>
       <span>
-        Designed & Developed by <span>ZikiTech</span>
+        Designed & Developed by <span>Dickson</span>
       </span>
     </div>
   );
