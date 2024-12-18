@@ -58,7 +58,12 @@ const DropNew = () => {
                   width={250}
                   height={150}
                   alt="NFT Image"
-                  style={{ marginBottom: "1rem" }}
+                  loading="lazy"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    marginBottom: "1rem",
+                  }}
                 />
               )}
               <CldUploadWidget
@@ -113,7 +118,12 @@ const DropNew = () => {
                   width={250}
                   height={150}
                   alt="NFT Image"
-                  style={{ marginBottom: "1rem" }}
+                  loading="lazy"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    marginBottom: "1rem",
+                  }}
                 />
               )}
               <CldUploadWidget
